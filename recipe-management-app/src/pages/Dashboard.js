@@ -58,7 +58,7 @@ const RecipeItem = styled.li`
   border-radius: 5px;
 `;
 
-function Dashboard() {
+const Dashboard = () => {
   const { loading, error, data } = useQuery(GET_RECIPES);
 
   if (loading) return <p>Loading...</p>;

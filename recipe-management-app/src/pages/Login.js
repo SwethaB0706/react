@@ -49,7 +49,7 @@ const ErrorMessage = styled.p`
   color: red;
 `;
 
-function Login() {
+const Login = ()=> {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();

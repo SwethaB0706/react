@@ -27,7 +27,7 @@ const LogoutButton = styled.button`
   cursor: pointer;
 `;
 
-function Header() {
+const Header =() => {
     const navigate = useNavigate();
     const isLoggedIn = !!localStorage.getItem('token');
   

@@ -67,7 +67,7 @@ const DeleteButton = styled.button`
   cursor: pointer;
 `;
 
-function RecipeDetails() {
+const RecipeDetails= ()=> {
   const { id } = useParams();
   const navigate = useNavigate();
   const { loading, error, data } = useQuery(GET_RECIPE, { variables: { id } });

@@ -69,7 +69,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function RecipeForm() {
+const RecipeForm = ()=> {
   const { id } = useParams();
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
