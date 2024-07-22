@@ -58,7 +58,7 @@ const AddRecipeButton = styled(Link)`
   border-radius: 5px;
 `;
 
-const RecipeList = ()=> {
+const RecipeList = () => {
   const { loading, error, data } = useQuery(GET_RECIPES);
   const [searchTerm, setSearchTerm] = useState('');
 

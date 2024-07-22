@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
@@ -27,36 +27,38 @@ const LogoutButton = styled.button`
   cursor: pointer;
 `;
 
-const Header =() => {
-    const navigate = useNavigate();
-    const isLoggedIn = !!localStorage.getItem('token');
-  
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        navigate('/login');
-      };
-  
-    return (
-      <HeaderContainer>
-        <Nav>
+const Header = () => {
+  const navigate = useNavigate();
+  const isLoggedIn = !!localStorage.getItem('token');
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
+
+  return (
+    <HeaderContainer>
+      <Nav>
+        {isLoggedIn && (
           <div>
             <NavLink to="/">Dashboard</NavLink>
             <NavLink to="/recipes">Recipes</NavLink>
             <NavLink to="/add-recipe">Add Recipe</NavLink>
           </div>
-          <div>
-            {isLoggedIn ? (
-              <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
-            ) : (
-              <>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/register">Register</NavLink>
-              </>
-            )}
-          </div>
-        </Nav>
-      </HeaderContainer>
-    );
-  }
-  
-  export default Header;
+        )}
+        <div>
+          {isLoggedIn ? (
+            <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+          ) : (
+            <>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/register">Register</NavLink>
+            </>
+          )}
+        </div>
+      </Nav>
+    </HeaderContainer>
+  );
+};
+
+export default Header;

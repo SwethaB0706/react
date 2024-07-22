@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
-import { useParams, Link,useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const GET_RECIPE = gql`
@@ -67,13 +67,41 @@ const DeleteButton = styled.button`
   cursor: pointer;
 `;
 
-const RecipeDetails= ()=> {
+const RecipeDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { loading, error, data } = useQuery(GET_RECIPE, { variables: { id } });
 
   const [deleteRecipe] = useMutation(DELETE_RECIPE, {
-    onCompleted: () => navigate('/recipes')
+    update(cache) {
+      // Update the cache to reflect the deletion
+      const existingRecipes = cache.readQuery({ query: gql`
+        query GetRecipes {
+          getRecipes {
+            id
+            title
+            category
+          }
+        }
+      `});
+
+      if (existingRecipes) {
+        const newRecipes = existingRecipes.getRecipes.filter(recipe => recipe.id !== id);
+        cache.writeQuery({
+          query: gql`
+            query GetRecipes {
+              getRecipes {
+                id
+                title
+                category
+              }
+            }
+          `,
+          data: { getRecipes: newRecipes },
+        });
+      }
+    },
+    onCompleted: () => navigate('/recipes'),
   });
 
   if (loading) return <p>Loading...</p>;
@@ -112,6 +140,6 @@ const RecipeDetails= ()=> {
       </ButtonContainer>
     </RecipeContainer>
   );
-}
+};
 
 export default RecipeDetails;
