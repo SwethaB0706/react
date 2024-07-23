@@ -1,0 +1,197 @@
+[
+  {
+    "id": "1",
+    "title": "trgr",
+    "ingredients": [
+      "ji"
+    ],
+    "instructions": [
+      "j"
+    ],
+    "category": "Dinner",
+    "date": "2024-07-17",
+    "userId": "1"
+  },
+  {
+    "id": "3",
+    "title": "jnk",
+    "ingredients": [
+      "nknk"
+    ],
+    "instructions": [
+      "nkn"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-03",
+    "userId": "1"
+  },
+  {
+    "id": "6",
+    "title": "nkkj",
+    "ingredients": [
+      "njkn"
+    ],
+    "instructions": [
+      "nk"
+    ],
+    "category": "Dinner",
+    "date": "2024-07-01",
+    "userId": "1"
+  },
+  {
+    "id": "7",
+    "title": "nklmk",
+    "ingredients": [
+      "jkjk"
+    ],
+    "instructions": [
+      "nk"
+    ],
+    "category": "Dinner",
+    "date": "2024-07-09",
+    "userId": "1"
+  },
+  {
+    "id": "8",
+    "title": "mklmlk",
+    "ingredients": [
+      "mklml"
+    ],
+    "instructions": [
+      "mklml"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-01",
+    "userId": "1"
+  },
+  {
+    "id": "6",
+    "title": "Pongal",
+    "ingredients": [
+      "Rice, pepper"
+    ],
+    "instructions": [
+      "Cook for 10 mins"
+    ],
+    "category": "Breakfast",
+    "date": "2024-07-22",
+    "userId": "2"
+  },
+  {
+    "id": "7",
+    "title": "Idly",
+    "ingredients": [
+      "Rice Flour"
+    ],
+    "instructions": [
+      "Steam Boil"
+    ],
+    "category": "Breakfast",
+    "date": "2024-07-21",
+    "userId": "2"
+  },
+  {
+    "id": "8",
+    "title": "Dosa",
+    "ingredients": [
+      "Rice Flour"
+    ],
+    "instructions": [
+      "Suddu man"
+    ],
+    "category": "Dinner",
+    "date": "2024-07-24",
+    "userId": "2"
+  },
+  {
+    "id": "9",
+    "title": "Panni Poori",
+    "ingredients": [
+      "poori, chat"
+    ],
+    "instructions": [
+      "later"
+    ],
+    "category": "Snacks",
+    "date": "2024-07-24",
+    "userId": "2"
+  },
+  {
+    "id": "10",
+    "title": "Chenna samosa",
+    "ingredients": [
+      "Chenna, samosa"
+    ],
+    "instructions": [
+      "Mix"
+    ],
+    "category": "Snacks",
+    "date": "2024-07-24",
+    "userId": "3"
+  },
+  {
+    "id": "11",
+    "title": "Parota",
+    "ingredients": [
+      "Maida, salna"
+    ],
+    "instructions": [
+      "Fry"
+    ],
+    "category": "Dinner",
+    "date": "2024-07-24",
+    "userId": "3"
+  },
+  {
+    "id": "12",
+    "title": "Chicken Briyani",
+    "ingredients": [
+      "Basmathi rice, chicken"
+    ],
+    "instructions": [
+      "Cook in cooker"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-17",
+    "userId": "3"
+  },
+  {
+    "id": "13",
+    "title": "Fried rice",
+    "ingredients": [
+      "Rice"
+    ],
+    "instructions": [
+      "Fry the rice"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-24",
+    "userId": "3"
+  },
+  {
+    "id": "14",
+    "title": "maggi",
+    "ingredients": [
+      "maggi,water"
+    ],
+    "instructions": [
+      "Boil"
+    ],
+    "category": "Snacks",
+    "date": "2024-07-24",
+    "userId": "3"
+  },
+  {
+    "id": "15",
+    "title": "h",
+    "ingredients": [
+      "h"
+    ],
+    "instructions": [
+      "h"
+    ],
+    "category": "Snacks",
+    "date": "2024-07-02",
+    "userId": "1"
+  }
+]

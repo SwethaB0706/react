@@ -59,8 +59,9 @@ const RecipeItem = styled.li`
 `;
 
 const Dashboard = () => {
-  const { loading, error, data } = useQuery(GET_RECIPES);
-
+  const { loading, error, data } = useQuery(GET_RECIPES, {
+    fetchPolicy: 'network-only', // Ensure it always fetches from the server
+  });
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
@@ -87,6 +88,7 @@ const Dashboard = () => {
         ))}
       </RecipeList>
       <Link to="/recipes">View All Recipes</Link>
+      {/* <button onClick={() => refetch()}>Refresh Recipes</button> */}
     </DashboardContainer>
   );
 }

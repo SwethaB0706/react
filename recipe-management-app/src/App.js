@@ -9,12 +9,13 @@ import RecipeDetails from './pages/RecipeDetails';
 import Header from './components/Header';
 import GlobalStyles from './styles/GlobalStyles';
 
-// Define PrivateRoute component
-const PrivateRoute = ({ children }) => {
+
+// Define ProtectedRoute component
+const ProtectedRoute = ({ children }) => {
   return localStorage.getItem('token') ? children : <Navigate to="/login" />;
 };
 
-function App() {
+const App =() =>{
   return (
     <Router>
       <GlobalStyles />
@@ -23,29 +24,29 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={
-          <PrivateRoute>
+          <ProtectedRoute>
             <Dashboard />
-          </PrivateRoute>
+          </ProtectedRoute>
         } />
         <Route path="/recipes" element={
-          <PrivateRoute>
+          <ProtectedRoute>
             <RecipeList />
-          </PrivateRoute>
+          </ProtectedRoute>
         } />
         <Route path="/recipe/:id" element={
-          <PrivateRoute>
+          <ProtectedRoute>
             <RecipeDetails />
-          </PrivateRoute>
+          </ProtectedRoute>
         } />
         <Route path="/add-recipe" element={
-          <PrivateRoute>
+          <ProtectedRoute>
             <RecipeForm />
-          </PrivateRoute>
+          </ProtectedRoute>
         } />
         <Route path="/edit-recipe/:id" element={
-          <PrivateRoute>
+          <ProtectedRoute>
             <RecipeForm />
-          </PrivateRoute>
+          </ProtectedRoute>
         } />
       </Routes>
     </Router>
