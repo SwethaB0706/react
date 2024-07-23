@@ -51,8 +51,8 @@ const Header = () => {
             <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
           ) : (
             <>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/register">Register</NavLink>
+              {/* <NavLink to="/login">Login</NavLink>
+              <NavLink to="/register">Register</NavLink> */}
             </>
           )}
         </div>
