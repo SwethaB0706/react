@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import styles from './Dashboard.module.css';
+import {useState} from 'react';
 
 const GET_RECIPES = gql`
   query GetRecipes {
@@ -17,40 +18,67 @@ const Dashboard = () => {
   const { loading, error, data } = useQuery(GET_RECIPES, {
     fetchPolicy: 'network-only',
   });
-
+  const [selectedCategory, setSelectedCategory] = useState('');
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
+  
   const recipes = data.getRecipes;
   const categories = [...new Set(recipes.map(recipe => recipe.category))];
 
-  return (
-    <div className={styles.dashboardContainer}>
-      <h1 className={styles.dashboardHeader}>Recipe Dashboard</h1>
-      <div className={styles.summary}>
-        <p>Total Recipes: {recipes.length}</p>
-        <div className={styles.categorySlider}>
-          {categories.map(category => (
-            <div key={category} className={styles.categoryItem}>{category}</div>
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+  const handleAllRecipesClick = () => {    
+    setSelectedCategory (''); 
+  };
+  
+ 
+  const filteredRecipes = selectedCategory
+    ? recipes.filter(recipe => recipe.category === selectedCategory)
+    : recipes;
+ 
+    return (
+      <div className={styles.dashboardContainer}>
+        <h1 className={styles.dashboardHeader}>Recipe Dashboard</h1>
+        <div className={styles.summary}>
+          <p>Total Recipes: {recipes.length}</p>
+          
+          <div className={styles.categorySlider}>
+          <button 
+          className={styles.categoryItem}
+          onClick={handleAllRecipesClick}
+        >
+          All Recipes
+        </button>
+            {categories.map(category => (
+              <div
+                key={category}
+                className={`${styles.categoryItem} ${selectedCategory === category ? styles.selectedCategory : ''}`}
+                onClick={() => handleCategoryClick(category)}
+              >
+                {category}
+                
+              </div>
+            ))}
+          </div>
+        </div>
+        <h2>{selectedCategory ? `${selectedCategory} Recipes` : 'Recent Recipes'}</h2>
+        <div className={styles.recipeSlider}>
+          {filteredRecipes.slice(0, 5).map(recipe => (
+            <div key={recipe.id} className={styles.recipeItem}>
+              <Link to={`/recipe/${recipe.id}`}>
+                {recipe.title} - {recipe.category}
+              </Link>
+            </div>
           ))}
         </div>
+        <Link to="/recipes" className={styles.viewAllLink}>View All Recipes</Link>
       </div>
-      <h2>Recent Recipes</h2>
-      <div className={styles.recipeSlider}>
-        {recipes.slice(0, 5).map(recipe => (
-          <div key={recipe.id} className={styles.recipeItem}>
-            <Link to={`/recipe/${recipe.id}`}>
-              {recipe.title} - {recipe.category}
-            </Link>
-          </div>
-        ))}
-      </div>
-      <Link to="/recipes" className={styles.viewAllLink}>View All Recipes</Link>
-    </div>
-  );
-}
-
-export default Dashboard;
+    );
+  };
+ 
+  export default Dashboard;
 
 // import React from 'react';
 // import { useQuery, gql } from '@apollo/client';

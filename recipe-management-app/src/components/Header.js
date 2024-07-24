@@ -1,31 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-
-const HeaderContainer = styled.header`
-  background-color: #333;
-  padding: 10px 20px;
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const NavLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  margin-right: 15px;
-`;
-
-const LogoutButton = styled.button`
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-`;
+import './Header.css';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -37,27 +12,27 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer>
-      <Nav>
+    <header className="header-container">
+      <nav className="nav">
         {isLoggedIn && (
-          <div>
-            <NavLink to="/">Dashboard</NavLink>
-            <NavLink to="/recipes">Recipes</NavLink>
-            <NavLink to="/add-recipe">Add Recipe</NavLink>
+          <div className="nav-links">
+            <Link className="nav-link" to="/">Dashboard</Link>
+            <Link className="nav-link" to="/recipes">Recipes</Link>
+            <Link className="nav-link" to="/add-recipe">Add Recipe</Link>
           </div>
         )}
         <div>
           {isLoggedIn ? (
-            <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
           ) : (
             <>
-              {/* <NavLink to="/login">Login</NavLink>
-              <NavLink to="/register">Register</NavLink> */}
+              {/* <Link className="nav-link" to="/login">Login</Link>
+              <Link className="nav-link" to="/register">Register</Link> */}
             </>
           )}
         </div>
-      </Nav>
-    </HeaderContainer>
+      </nav>
+    </header>
   );
 };
 

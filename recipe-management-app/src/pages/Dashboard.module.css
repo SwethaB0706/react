@@ -174,7 +174,7 @@
   }
   
   .summary {
-    background-color: #fff;
+    background-color: #ffe9d7;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -189,10 +189,10 @@
   }
   
   .categoryItem {
-    background-color: #4CAF50;
+    background-color: #e1a046;
     color: #fff;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-right: 10px;
     white-space: nowrap;
     transition: transform 0.3s ease;
@@ -201,7 +201,8 @@
   }
   
   .categoryItem:hover {
-    transform: scale(1.05);
+    transform: scale(.95);
+    text-decoration: none;
   }
   
   .recipeSlider {
@@ -226,7 +227,8 @@
   }
   
   .recipeItem:hover {
-    transform: scale(1.05);
+    transform: scale(.95);
+
   }
   
   .recipeItem a {
@@ -236,12 +238,16 @@
     font-size: 18px;
     font-weight: bold;
   }
+
+  .recipeItem:hover{
+    text-decoration: none;
+  }
   
   .viewAllLink {
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: #4CAF50;
+    color: #e1a046;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -249,7 +255,8 @@
   }
   
   .viewAllLink:hover {
-    color: #45a049;
+    color: #905a0e;
+    text-decoration: none;
   }
   
   /* For WebKit browsers */
@@ -258,19 +265,19 @@
     position: relative;
   }
   
-  .categorySlider::after,
+  /* .categorySlider::after,
   .recipeSlider::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
+    right: 1;
     width: 20px;
     height: 100%;
-    background-color: #4CAF50;
+    background-color: #aeffb1;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
   }
-  
+   */
   .categorySlider::after {
     right: 0;
   }

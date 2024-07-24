@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import './RecipeDetails.css';
 
 const GET_RECIPE = gql`
   query GetRecipe($id: ID!) {
@@ -22,51 +22,6 @@ const DELETE_RECIPE = gql`
   }
 `;
 
-const RecipeContainer = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-`;
-
-const RecipeTitle = styled.h1`
-  color: #333;
-  text-align: center;
-`;
-
-const RecipeInfo = styled.div`
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-`;
-
-const List = styled.ul`
-  padding-left: 20px;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-`;
-
-const Button = styled(Link)`
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-`;
-
-const DeleteButton = styled.button`
-  padding: 10px 20px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
 const RecipeDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -74,19 +29,20 @@ const RecipeDetails = () => {
 
   const [deleteRecipe] = useMutation(DELETE_RECIPE, {
     update(cache) {
-      // Update the cache to reflect the deletion
-      const existingRecipes = cache.readQuery({ query: gql`
-        query GetRecipes {
-          getRecipes {
-            id
-            title
-            category
+      const existingRecipes = cache.readQuery({
+        query: gql`
+          query GetRecipes {
+            getRecipes {
+              id
+              title
+              category
+            }
           }
-        }
-      `});
+        `,
+      });
 
       if (existingRecipes) {
-        const newRecipes = existingRecipes.getRecipes.filter(recipe => recipe.id !== id);
+        const newRecipes = existingRecipes.getRecipes.filter((recipe) => recipe.id !== id);
         cache.writeQuery({
           query: gql`
             query GetRecipes {
@@ -116,29 +72,29 @@ const RecipeDetails = () => {
   };
 
   return (
-    <RecipeContainer>
-      <RecipeTitle>{title}</RecipeTitle>
-      <RecipeInfo>
+    <div className="recipe-container">
+      <h1 className="recipe-title">{title}</h1>
+      <div className="recipe-info">
         <p><strong>Category:</strong> {category}</p>
         <p><strong>Date:</strong> {date}</p>
         <h3>Ingredients:</h3>
-        <List>
+        <ul className="list">
           {ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
-        </List>
+        </ul>
         <h3>Instructions:</h3>
-        <List>
+        <ul className="list">
           {instructions.map((step, index) => (
             <li key={index}>{step}</li>
           ))}
-        </List>
-      </RecipeInfo>
-      <ButtonContainer>
-        <Button to={`/edit-recipe/${id}`}>Edit Recipe</Button>
-        <DeleteButton onClick={handleDelete}>Delete Recipe</DeleteButton>
-      </ButtonContainer>
-    </RecipeContainer>
+        </ul>
+      </div>
+      <div className="button-container">
+        <Link className="button" to={`/edit-recipe/${id}`}>Edit Recipe</Link>
+        <button className="delete-button" onClick={handleDelete}>Delete Recipe</button>
+      </div>
+    </div>
   );
 };
 
