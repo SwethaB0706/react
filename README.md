@@ -1,2 +1,2 @@
-# React-project
+# Recipe-Management-app
  
