@@ -219,7 +219,7 @@
     border-radius: 10px;
     min-width: 250px;
     height: 200px;
-    background-image: url('D:\Data\Official\fullstack\final\react\recipe-management-app\src\pages\login.jpg');
+    background-image: url('https://th.bing.com/th/id/OIP.xYP8C2sBIki67lzjLJm2BAHaE7?w=303&h=201&c=7&r=0&o=5&dpr=1.3&pid=1.7');
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -230,7 +230,7 @@
   }
   
   .recipeItem a {
-    color: #333;
+    color: #ffe4b9;
     text-decoration: none;
     text-align: center;
     font-size: 18px;
