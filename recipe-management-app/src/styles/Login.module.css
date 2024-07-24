@@ -1,37 +1,3 @@
-/* Login.module.css
-.loginPage {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: url('../pages/login.jpg') no-repeat center center fixed;
-  background-size: cover;
-  filter: blur(0px);
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loginContainer {
-  max-width: 400px;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-out;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -43,51 +9,6 @@
   }
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input {
-  margin-bottom: 15px;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-.input:focus {
-  border-color: #4CAF50;
-  outline: none;
-}
-
-.button {
-  padding: 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #45a049;
-}
-
-.button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-.errorMessage {
-  color: #f44336;
-  margin-top: 10px;
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-}
-
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -103,16 +24,6 @@
   }
 }
 
-.link {
-  color: #4CAF50;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: #45a049;
-  text-decoration: underline;
-} */
 .loginPage {
   margin: 0;
   padding: 0;
@@ -123,7 +34,7 @@
   justify-content: center;
   align-items: center;
 }
- 
+
 .overlay {
   display: flex;
   width: 80%;
@@ -132,20 +43,13 @@
   border-radius: 10px;
   overflow: hidden;
 }
- 
+
 .leftSection {
   flex: 1;
-  background-color: #f8f8f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: url('https://wallpapercave.com/wp/wp3376127.jpg') no-repeat center center;
+  background-size: cover;
 }
- 
-.foodImage {
-  max-width: 100%;
-  max-height: 100%;
-}
- 
+
 .rightSection {
   flex: 1;
   background-color: #fff;
@@ -154,16 +58,16 @@
   align-items: center;
   padding: 30px;
 }
- 
+
 .loginContainer {
   width: 100%;
 }
- 
+
 .form {
   display: flex;
   flex-direction: column;
 }
- 
+
 .input {
   margin-bottom: 15px;
   padding: 12px;
@@ -172,12 +76,12 @@
   font-size: 16px;
   transition: border-color 0.3s ease;
 }
- 
+
 .input:focus {
   border-color: #4CAF50;
   outline: none;
 }
- 
+
 .button {
   padding: 12px;
   background-color: #4CAF50;
@@ -188,43 +92,28 @@
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
- 
+
 .button:hover {
   background-color: #45a049;
 }
- 
+
 .button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
- 
+
 .errorMessage {
   color: #f44336;
   margin-top: 10px;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
- 
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
- 
+
 .link {
   color: #4CAF50;
   text-decoration: none;
   transition: color 0.3s ease;
 }
- 
+
 .link:hover {
   color: #45a049;
   text-decoration: underline;

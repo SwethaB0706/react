@@ -1,10 +1,10 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation, gql } from '@apollo/client';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
-import { client } from '../index'; // Import client
+import { client } from '../index';
 import { AuthContext } from '../contexts/AuthContext';
- 
+
 const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -16,14 +16,14 @@ const LOGIN_MUTATION = gql`
     }
   }
 `;
- 
+
 const Login = () => {
   const { dispatch } = React.useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
- 
+
   const [login, { loading }] = useMutation(LOGIN_MUTATION, {
     onCompleted: ({ login }) => {
       localStorage.setItem('token', login.token);
@@ -40,24 +40,20 @@ const Login = () => {
   });
 
   useEffect(() => {
-    // Clear the email and password fields on component mount
     setEmail('');
     setPassword('');
   }, []);
 
- 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrorMessage(''); // Clear any previous error messages
+    setErrorMessage('');
     login({ variables: { email, password } });
   };
- 
+
   return (
     <div className={styles.loginPage}>
       <div className={styles.overlay}>
-        <div className={styles.leftSection}>
-          <img src="https://mail.google.com/mail/u/0/#inbox" alt="Delicious food" className={styles.foodImage} />
-        </div>
+        <div className={styles.leftSection}></div>
         <div className={styles.rightSection}>
           <div className={styles.loginContainer}>
             <h2>Login</h2>
@@ -89,6 +85,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
- 
+};
+
 export default Login;
