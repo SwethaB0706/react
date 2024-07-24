@@ -8,6 +8,7 @@ import RecipeForm from './components/RecipeForm';
 import RecipeDetails from './pages/RecipeDetails';
 import Header from './components/Header';
 import GlobalStyles from './styles/GlobalStyles';
+import { AuthProvider } from './contexts/AuthContext';
 
 
 // Define ProtectedRoute component
@@ -17,6 +18,7 @@ const ProtectedRoute = ({ children }) => {
 
 const App =() =>{
   return (
+    <AuthProvider>
     <Router>
       <GlobalStyles />
       <Header />
@@ -50,6 +52,7 @@ const App =() =>{
         } />
       </Routes>
     </Router>
+    </AuthProvider>
   );
 }
 

@@ -349,7 +349,11 @@ const RecipeForm = () => {
         });
       }
     },
-    onCompleted: () => navigate('/recipes'),
+    onCompleted: () => {
+      navigate('/recipes');
+      window.location.reload();
+    },
+   
   });
 
   const [updateRecipe] = useMutation(UPDATE_RECIPE, {
@@ -432,7 +436,7 @@ const RecipeForm = () => {
           <option value="Lunch">Lunch</option>
           <option value="Dinner">Dinner</option>
           <option value="Snacks">Snacks</option>
-          <option value="Brunch">Others</option>
+          <option value="Brunch">Brunch</option>
         </Select>
         <Input
           type="date"

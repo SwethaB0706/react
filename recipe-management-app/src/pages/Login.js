@@ -3,6 +3,7 @@ import { useMutation, gql } from '@apollo/client';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import { client } from '../index'; // Import client
+import { AuthContext } from '../contexts/AuthContext';
  
 const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
@@ -17,6 +18,7 @@ const LOGIN_MUTATION = gql`
 `;
  
 const Login = () => {
+  const { dispatch } = React.useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,6 +28,10 @@ const Login = () => {
     onCompleted: ({ login }) => {
       localStorage.setItem('token', login.token);
       client.resetStore();
+      dispatch({
+        type: 'LOGIN',
+        payload: { token: login.token, user: login.user },
+      });
       navigate('/');
     },
     onError: (error) => {

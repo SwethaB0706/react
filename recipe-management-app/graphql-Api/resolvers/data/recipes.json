@@ -143,19 +143,6 @@
     "userId": "3"
   },
   {
-    "id": "12",
-    "title": "Chicken Briyani",
-    "ingredients": [
-      "Basmathi rice, chicken"
-    ],
-    "instructions": [
-      "Cook in cooker"
-    ],
-    "category": "Lunch",
-    "date": "2024-07-17",
-    "userId": "3"
-  },
-  {
     "id": "13",
     "title": "Fried rice",
     "ingredients": [
@@ -193,5 +180,22 @@
     "category": "Snacks",
     "date": "2024-07-02",
     "userId": "1"
+  },
+  {
+    "id": "15",
+    "title": "coconut rice",
+    "ingredients": [
+      "coconut",
+      "oil",
+      "rice",
+      "curry leaves",
+      "mustard seeds"
+    ],
+    "instructions": [
+      "put everything in the pot and fry..shhhh"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-25",
+    "userId": "2"
   }
 ]

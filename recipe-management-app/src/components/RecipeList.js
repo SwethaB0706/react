@@ -58,6 +58,7 @@ const AddRecipeButton = styled(Link)`
   border-radius: 5px;
 `;
 
+
 const RecipeList = () => {
   const { loading, error, data } = useQuery(GET_RECIPES);
   const [searchTerm, setSearchTerm] = useState('');
@@ -71,6 +72,7 @@ const RecipeList = () => {
     recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     recipe.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
 
   return (
     <RecipeListContainer>
