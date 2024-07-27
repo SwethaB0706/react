@@ -44,6 +44,14 @@ const Login = () => {
     setPassword('');
   }, []);
 
+  useEffect(() => {
+    // Check if the user is already logged in
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/');
+    }
+  }, [navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMessage('');

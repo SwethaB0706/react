@@ -16,5 +16,17 @@
     "username": "Anek",
     "email": "anek@gmail.com",
     "password": "$2a$10$DWnml/ijxQeXnYuXsQvomuNvV7tfU8iG6FNZl7IusvOgtNHV5aWx2"
+  },
+  {
+    "id": "4",
+    "username": "newUser",
+    "email": "newuser@example.com",
+    "password": "$2a$10$dm2LVUpADHbGR8L3UFm5ceBuc1I9fZxhUY7AlDaq5jDd1X8B2Hh7m"
+  },
+  {
+    "id": "5",
+    "username": "priya",
+    "email": "priya@gmail.com",
+    "password": "$2a$10$qBHEJmOwqfjpqtocjoeM/eO3DsinfuFM5Lb0BTstyonn/xeT92Tae"
   }
 ]

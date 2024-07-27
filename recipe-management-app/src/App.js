@@ -12,9 +12,32 @@ import { AuthProvider } from './contexts/AuthContext';
 
 
 // Define ProtectedRoute component
+// const ProtectedRoute = ({ children }) => {
+//   return localStorage.getItem('token') ? children : <Navigate to="/login" />;
+// };
 const ProtectedRoute = ({ children }) => {
-  return localStorage.getItem('token') ? children : <Navigate to="/login" />;
+  const token = localStorage.getItem('token');
+
+  // You can add additional logic to check for token expiration here
+  const isTokenValid = token && !isTokenExpired(token);
+
+  return isTokenValid ? children : <Navigate to="/login" />;
 };
+
+//Function to check if the token is expired
+//Assuming your token is a JWT, you can decode it and check the expiration time
+const isTokenExpired = (token) => {
+  try {
+    const [, payload] = token.split('.');
+    const decodedPayload = JSON.parse(atob(payload));
+    const currentTime = Math.floor(Date.now() / 1000);
+    return decodedPayload.exp < currentTime;
+  } catch (error) {
+    // If there's an error decoding the token, assume it's invalid
+    return true;
+  }
+};
+
 
 const App =() =>{
   return (

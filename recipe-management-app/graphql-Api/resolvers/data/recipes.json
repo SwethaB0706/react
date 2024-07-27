@@ -84,7 +84,7 @@
       "Rice Flour"
     ],
     "instructions": [
-      "Steam Boil"
+      "Steam Boil the flour"
     ],
     "category": "Breakfast",
     "date": "2024-07-21",
@@ -117,19 +117,6 @@
     "userId": "2"
   },
   {
-    "id": "10",
-    "title": "Chenna samosa",
-    "ingredients": [
-      "Chenna, samosa"
-    ],
-    "instructions": [
-      "Mix"
-    ],
-    "category": "Snacks",
-    "date": "2024-07-24",
-    "userId": "3"
-  },
-  {
     "id": "11",
     "title": "Parota",
     "ingredients": [
@@ -138,7 +125,7 @@
     "instructions": [
       "Fry"
     ],
-    "category": "Dinner",
+    "category": "Breakfast",
     "date": "2024-07-24",
     "userId": "3"
   },
@@ -151,7 +138,7 @@
     "instructions": [
       "Fry the rice"
     ],
-    "category": "Lunch",
+    "category": "Dinner",
     "date": "2024-07-24",
     "userId": "3"
   },
@@ -164,39 +151,9 @@
     "instructions": [
       "Boil"
     ],
-    "category": "Brunch",
+    "category": "Breakfast",
     "date": "2024-07-24",
     "userId": "3"
-  },
-  {
-    "id": "15",
-    "title": "h",
-    "ingredients": [
-      "h"
-    ],
-    "instructions": [
-      "h"
-    ],
-    "category": "Snacks",
-    "date": "2024-07-02",
-    "userId": "1"
-  },
-  {
-    "id": "15",
-    "title": "coconut rice",
-    "ingredients": [
-      "coconut",
-      "oil",
-      "rice",
-      "curry leaves",
-      "mustard seeds"
-    ],
-    "instructions": [
-      "put everything in the pot and fry..shhhh"
-    ],
-    "category": "Lunch",
-    "date": "2024-07-25",
-    "userId": "2"
   },
   {
     "id": "16",
@@ -210,5 +167,44 @@
     "category": "Snacks",
     "date": "2024-07-25",
     "userId": "3"
+  },
+  {
+    "id": "16",
+    "title": "t",
+    "ingredients": [
+      "f"
+    ],
+    "instructions": [
+      "h"
+    ],
+    "category": "Lunch",
+    "date": "2024-08-10",
+    "userId": "1"
+  },
+  {
+    "id": "17",
+    "title": "g",
+    "ingredients": [
+      "r"
+    ],
+    "instructions": [
+      "f"
+    ],
+    "category": "Snacks",
+    "date": "2024-07-31",
+    "userId": "5"
+  },
+  {
+    "id": "17",
+    "title": "sdfdgfggf",
+    "ingredients": [
+      "fd"
+    ],
+    "instructions": [
+      "vf"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-31",
+    "userId": "1"
   }
 ]
