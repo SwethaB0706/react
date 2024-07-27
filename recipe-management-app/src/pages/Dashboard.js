@@ -80,6 +80,7 @@
  
 //   export default Dashboard;
 
+
 import React, { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
@@ -87,7 +88,7 @@ import Replicate from 'replicate';
 import styles from './Dashboard.module.css';
 
 const replicate = new Replicate({
-  auth: process.env.REACT_APP_REPLICATE_API_TOKEN,
+  auth: process.env.REPLICATE_API_TOKEN,
 });
 
 const GET_RECIPES = gql`
@@ -134,7 +135,7 @@ const Dashboard = () => {
         max_tokens: 1024,
       };
 
-      const output = await replicate.run('meta/meta-llama-3.1-405b-instruct', { input });
+      const output = await replicate.run('a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5', { input });
       setResponse(output.join(''));
     } catch (error) {
       console.error('Error querying LLaMA:', error);
@@ -148,7 +149,7 @@ const Dashboard = () => {
         max_tokens: 1024,
       };
 
-      const output = await replicate.run('meta/meta-llama-3.1-405b-instruct', { input });
+      const output = await replicate.run('a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5', { input });
       setRandomRecipe(output.join(''));
     } catch (error) {
       console.error('Error querying LLaMA:', error);
@@ -213,7 +214,7 @@ const Dashboard = () => {
         <button onClick={handleAskLLaMA} className={styles.chatButton}>
           Ask LLaMA
         </button>
-        <div className={styles.chatResponse}>{response}</div>
+        <p className={styles.chatResponse}>{response}</p>
       </div>
 
       <button onClick={handleRandomRecipe} className={styles.randomButton}>
@@ -230,3 +231,8 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
+
