@@ -28,5 +28,11 @@
     "username": "priya",
     "email": "priya@gmail.com",
     "password": "$2a$10$qBHEJmOwqfjpqtocjoeM/eO3DsinfuFM5Lb0BTstyonn/xeT92Tae"
+  },
+  {
+    "id": "6",
+    "username": "Anek C B",
+    "email": "anekcbabu@gmail.com",
+    "password": "$2a$10$U0MlpgPfsixo4XLTRBFH6Oh.Z/DVqAFgak0EIWjXtq141PwDTtNdC"
   }
 ]

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import Dashboard from './pages/Dashbord/Dashboard';
 import RecipeList from './components/RecipeList';
 import RecipeForm from './components/RecipeForm';
-import RecipeDetails from './pages/RecipeDetails';
+import RecipeDetails from './pages/RecipeDetails/RecipeDetails';
 import Header from './components/Header';
 import GlobalStyles from './styles/GlobalStyles';
 import { AuthProvider } from './contexts/AuthContext';

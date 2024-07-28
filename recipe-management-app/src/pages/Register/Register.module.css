@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+.registerBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  background: url("D:\Data\Official\fullstack\final\react\recipe-management-app\src\pages\Login\pexels-chanwalrus-958545.jpg"), #000;
+  background-position: center;
+  background-size: cover;
+}
+
+.registerContainer {
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #b02802, #ff9b05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradientText:hover{
+  background: linear-gradient(90deg, #ff9b05, #a62603);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(0deg, #e43e10, #ff9b05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inputField {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
+
+.inputField label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.inputField input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+
+.inputField input:focus ~ label,
+.inputField input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.errorMessage {
+  color: #f44336;
+  margin-top: 10px;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+button {
+  background: linear-gradient(90deg, #f63b07, #ff9b05);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ff9b05, #f9572a);
+}
+
+.link {
+  color: #efefef;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.logo {
+  margin-bottom: 15px;
+}
+
+.logo img {
+  max-width: 80px;
+  height: auto;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.createAccount {
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
