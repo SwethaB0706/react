@@ -4,15 +4,20 @@
     padding: 20px;
     background: linear-gradient(to right, #ece9ee, #f3eade);
     border-radius: 10px;
+    backdrop-filter: blur(px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(115, 56, 56, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
   }
-  
+  .cca{
+    
+}
   .recipe-list-header {
-    background: linear-gradient(90deg, #f9572a, #ff9b05);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+     background: linear-gradient(90deg, #f9572a, #ff9b05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
@@ -27,6 +32,9 @@
     background: rgba(255, 255, 255, 0.8);
     color: black;
   }
+
+   
+  
   
   .recipe-grid {
     display: grid;

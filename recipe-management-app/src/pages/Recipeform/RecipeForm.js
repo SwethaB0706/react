@@ -596,33 +596,33 @@ const RecipeForm = () => {
   if (queryError) return <p>Error: {queryError.message}</p>;
 
   return (
-    <div className="form-container">
+    <div className="lform-container">
       <h2>{id ? 'Edit Recipe' : 'Add New Recipe'}</h2>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="lform" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="input"
+          className="linput"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
         />
         <textarea
-          className="textarea"
+          className="ltextarea"
           placeholder="Ingredients (one per line)"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
           required
         />
         <textarea
-          className="textarea"
+          className="ltextarea"
           placeholder="Instructions (one step per line)"
           value={instructions}
           onChange={(e) => setInstructions(e.target.value)}
           required
         />
         <select
-          className="select"
+          className="lselect"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           required
@@ -636,12 +636,12 @@ const RecipeForm = () => {
         </select>
         <input
           type="date"
-          className="input"
+          className="linput"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
         />
-        <button type="submit" className="button">{id ? 'Update Recipe' : 'Add Recipe'}</button>
+        <button type="submit" className="lbutton">{id ? 'Update Recipe' : 'Add Recipe'}</button>
       </form>
     </div>
   );

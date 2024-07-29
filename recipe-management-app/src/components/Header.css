@@ -119,13 +119,15 @@
     color: white;
     text-decoration: underline;
     margin-right: 20px;
+    text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
     animation: slideDown 0.5s ease-out;
   }
   
   .nav-link:hover {
-    color: #c7790d;
+    color: #ff6557;
+    text-decoration: none;
   }
   
   .logout-button {

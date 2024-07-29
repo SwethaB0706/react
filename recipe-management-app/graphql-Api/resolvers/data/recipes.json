@@ -118,7 +118,7 @@
   },
   {
     "id": "11",
-    "title": "Parota",
+    "title": "Parotta",
     "ingredients": [
       "Maida, salna"
     ],
@@ -153,19 +153,6 @@
     ],
     "category": "Breakfast",
     "date": "2024-07-24",
-    "userId": "3"
-  },
-  {
-    "id": "16",
-    "title": "paani poori",
-    "ingredients": [
-      "paani, poori"
-    ],
-    "instructions": [
-      "fill paani inside poori"
-    ],
-    "category": "Snacks",
-    "date": "2024-07-25",
     "userId": "3"
   },
   {
@@ -206,5 +193,95 @@
     "category": "Lunch",
     "date": "2024-07-31",
     "userId": "1"
+  },
+  {
+    "id": "17",
+    "title": "samoosa",
+    "ingredients": [
+      "2 cups",
+      "All Purpose Flour  (maida, 260 grams)",
+      "1 teaspoon",
+      "Ajwain  (carom seeds)",
+      "¼ teaspoon",
+      "Salt",
+      "4 tablespoons",
+      "Oil  (60 ml + 5 ml, +1 teaspoon)",
+      "6 tablespoons",
+      "Water  (to knead the dough, around)",
+      "4 ",
+      "Medium Potatoes  (500-550 grams)",
+      "2 tablespoons",
+      "Oil",
+      "1 teaspoon",
+      "Cumin Seeds",
+      "1 teaspoon",
+      "Fennel Seeds",
+      "2 teaspoons",
+      "Coriander Seeds  (crushed)",
+      "1 teaspoon",
+      "Ginger  (finely chopped)",
+      "1 ",
+      "Green Chili  (chopped)",
+      "¼ teaspoon",
+      "Hing  (asafoetida)",
+      "½ cup",
+      "Green Peas  (I used frozen green peas which I soaked in warm water for 10-15 minutes before using, +2 tablespoons)",
+      "1 teaspoon",
+      "Coriander Powder",
+      "½ teaspoon",
+      "Garam Masala",
+      "½ teaspoon",
+      "Amchur  (dried mango powder)",
+      "¼ teaspoon",
+      "Red Chili Powder  (or add more to taste)",
+      "¾ teaspoon",
+      "Salt  (or to taste)"
+    ],
+    "instructions": [
+      "1. Start by making the samosa dough. To a large bowl, add flour, ajwain (carom seeds), salt and mix well.",
+      "2. Add the oil and then start mixing with your fingers. Rub the flour with the oil until the oil is well incorporated in all of the flour. Do this for"
+    ],
+    "category": "Snacks",
+    "date": "2024-07-30",
+    "userId": "3"
+  },
+  {
+    "id": "19",
+    "title": "idly",
+    "ingredients": [
+      "floch"
+    ],
+    "instructions": [
+      "ilejcl"
+    ],
+    "category": "Dinner",
+    "date": "2024-07-25",
+    "userId": "3"
+  },
+  {
+    "id": "21",
+    "title": "biriyani",
+    "ingredients": [
+      "adsfc"
+    ],
+    "instructions": [
+      "adsf"
+    ],
+    "category": "Lunch",
+    "date": "2024-07-25",
+    "userId": "3"
+  },
+  {
+    "id": "20",
+    "title": "pizza",
+    "ingredients": [
+      "asfd"
+    ],
+    "instructions": [
+      "asf"
+    ],
+    "category": "Dinner",
+    "date": "2024-08-02",
+    "userId": "3"
   }
 ]

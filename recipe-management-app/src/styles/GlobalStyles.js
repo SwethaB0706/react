@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: #4CAF50;
+    color: #ddd;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
