@@ -452,10 +452,10 @@
 }
 
 .dashboardContainer {
-  max-width: 1200px;
+  max-width: auto;
   margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(135deg, #f7f7f7, #e6e6e6);
+  background: linear-gradient(135deg, #fff5f5, #dadada);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s ease-out;
@@ -467,7 +467,7 @@
   align-items: center;
   margin-bottom: 2rem;
   padding: 20px;
-  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  background: linear-gradient(90deg, #f9572a8b, #ff9b057b);
   border-radius: 10px;
   color: #fff;
 }
@@ -538,7 +538,7 @@
 }
 
 .categoryItem {
-  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  background: linear-gradient(90deg, #f9572a8d, #ff9b0586);
   color: #fff;
   padding: 10px 20px;
   border-radius: 25px;
@@ -569,7 +569,7 @@
   padding: 0 1.5em;
   text-align: center;
   cursor: pointer;
-  background: linear-gradient(135deg, #f9572a, #ff9b05);
+  background: linear-gradient(135deg, #f9572a80, #ff9b0574);
   margin-right: 15px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -578,6 +578,7 @@
 .recipeItem:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(90deg, #ff9b05, #f9572a);
 }
 
 .recipeItem a {
@@ -604,7 +605,7 @@
 
 .chatContainer {
   background: linear-gradient(135deg, #fff3e6, #ffe9d7);
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);

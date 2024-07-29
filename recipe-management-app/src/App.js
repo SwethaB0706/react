@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Dashboard from './pages/Dashbord/Dashboard';
-import RecipeList from './components/RecipeList';
-import RecipeForm from './components/RecipeForm';
+import RecipeList from './pages/Recipelist/RecipeList';
+import RecipeForm from './pages/Recipeform/RecipeForm';
 import RecipeDetails from './pages/RecipeDetails/RecipeDetails';
 import Header from './components/Header';
 import GlobalStyles from './styles/GlobalStyles';
