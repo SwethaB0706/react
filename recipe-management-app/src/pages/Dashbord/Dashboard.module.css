@@ -253,8 +253,9 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: url("D:\Data\Official\fullstack\final\react\recipe-management-app\src\pages\Dashbord\Media (1).jpg"), #000;
+  font-family: "Open Sans", sans-serif;
+  background: url("D:\Data\Official\fullstack\final\react\recipe-management-app\src\pages\Dashbord\Media (1).jpg"),
+    #000;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
@@ -292,7 +293,7 @@ body {
 .dhero h1 {
   font-size: 2rem;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   margin: 0;
@@ -313,7 +314,10 @@ body {
   gap: 1rem;
 }
 
-.dcta a, .dcta button, .drandomButton, .dchatButton {
+.dcta a,
+.dcta button,
+.drandomButton,
+.dchatButton {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -328,7 +332,10 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dcta a:hover, .dcta button:hover, .drandomButton:hover, .dchatButton:hover {
+.dcta a:hover,
+.dcta button:hover,
+.drandomButton:hover,
+.dchatButton:hover {
   background: linear-gradient(90deg, #ff9b05, #f9572a);
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -354,7 +361,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.dcategorySlider, .drecipeSlider {
+.dcategorySlider,
+.drecipeSlider {
   display: flex;
   overflow-x: auto;
   padding: 10px 0;
@@ -369,7 +377,7 @@ body {
   background: linear-gradient(90deg, #f9572a, #ff9b05);
   color: #fff;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 5px;
   margin-right: 10px;
   white-space: nowrap;
   transition: all 0.3s ease;
@@ -380,7 +388,8 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.dcategoryItem:hover, .dselectedCategory {
+.dcategoryItem:hover,
+.dselectedCategory {
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   background: linear-gradient(90deg, #ff9b05, #f9572a);

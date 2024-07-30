@@ -1,18 +1,18 @@
-const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const jwt = require('jsonwebtoken');
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
+const jwt = require("jsonwebtoken");
 
-const typeDefs = require('./schema/schema');
-const resolvers = require('./resolvers/resolvers');
+const typeDefs = require("./schema/schema");
+const resolvers = require("./resolvers/resolvers");
 
 const app = express();
 
 const getUser = (token) => {
   if (token) {
     try {
-      return jwt.verify(token, 'your-secret-key');
+      return jwt.verify(token, "your-secret-key");
     } catch (error) {
-      throw new Error('Invalid token');
+      throw new Error("Invalid token");
     }
   }
 };
@@ -21,8 +21,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req }) => {
-    const token = req.headers.authorization || '';
-    const user = getUser(token.replace('Bearer ', ''));
+    const token = req.headers.authorization || "";
+    const user = getUser(token.replace("Bearer ", ""));
     return { user };
   },
 });
@@ -33,7 +33,9 @@ async function startServer() {
 
   const PORT = process.env.PORT || 4000;
   app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}${server.graphqlPath}`);
+    console.log(
+      `Server running on http://localhost:${PORT}${server.graphqlPath}`
+    );
   });
 }
 

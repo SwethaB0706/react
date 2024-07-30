@@ -1,23 +1,23 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, { createContext, useReducer, useEffect } from "react";
 
 const AuthContext = createContext();
 
 const initialState = {
   isAuthenticated: false,
   user: null,
-  token: localStorage.getItem('token') || null,
+  token: localStorage.getItem("token") || null,
 };
 
 const authReducer = (state, action) => {
   switch (action.type) {
-    case 'LOGIN':
+    case "LOGIN":
       return {
         ...state,
         isAuthenticated: true,
         user: action.payload.user,
         token: action.payload.token,
       };
-    case 'LOGOUT':
+    case "LOGOUT":
       return {
         ...state,
         isAuthenticated: false,
@@ -34,9 +34,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (state.token) {
-      localStorage.setItem('token', state.token);
+      localStorage.setItem("token", state.token);
     } else {
-      localStorage.removeItem('token');
+      localStorage.removeItem("token");
     }
   }, [state.token]);
 

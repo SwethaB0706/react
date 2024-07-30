@@ -1,78 +1,84 @@
 .lform-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    margin-top: 75px;
-    text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  margin-top: 75px;
+  text-align: center;
   /* -webkit-backdrop-filter: blur(7px); */
   border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .lform {
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    color: aliceblue;
-    
+}
+
+.lform {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  color: aliceblue;
+
   /* -webkit-backdrop-filter: blur(7px); */
   border: 1px solid rgba(255, 255, 255, 0);
-  }
-  
-  .linput{
-    margin-bottom: 10px;
-    color: rgb(240, 255, 255);
-    padding: 10px;background-color: #ffffff0c;
-    border: 1px solid #dddddd00;
-    border-radius: 5px;
-    border-radius: 10px;
-    background-color: #ff421300;
-   /*-webkit-backdrop-filter: blur(7px); */
-   border: 1px solid rgba(255, 255, 255, 0.259);
-    
-  }
-  .ltextarea{
-    margin-bottom: 10px;
-    color: rgb(240, 255, 255);
-    padding: 10px;background-color: #ffffff0c;
-    border: 1px solid #dddddd00;
-    border-radius: 5px;
-    border-radius: 10px;
-    background-color: #ff421300;
-   /*-webkit-backdrop-filter: blur(7px); */
-   border: 1px solid rgba(255, 255, 255, 0.259);
-    
-  }
-  .lselect {
-    margin-bottom: 10px;
-    color: rgb(240, 255, 255);
-    padding: 10px;background-color: #ffffff0c;
-    border: 1px solid #dddddd00;
-    border-radius: 5px;
-    border-radius: 10px;
-    background-color: #ff421300;
-   /*-webkit-backdrop-filter: blur(7px); */
-   border: 1px solid rgba(255, 255, 255, 0.259);
-    
-  }
-  
-  .ltextarea {
-    height: 100px;
-    color: rgb(255, 255, 255)
-  }
-  
-  .lbutton {
-    padding: 10px;
-    background: linear-gradient(to left, #ff4213, #ff9544);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .lbutton:hover {
-    background-color: #ffffff;
-  }
-  
+}
+
+.linput {
+  margin-bottom: 10px;
+  color: rgb(240, 255, 255);
+  padding: 10px;
+  background-color: #ffffff0c;
+  border: 1px solid #dddddd00;
+  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #ff421300;
+  /*-webkit-backdrop-filter: blur(7px); */
+  border: 1px solid rgba(255, 255, 255, 0.259);
+}
+.ltextarea {
+  margin-bottom: 10px;
+  color: rgb(240, 255, 255);
+  padding: 10px;
+  background-color: #ffffff0c;
+  border: 1px solid #dddddd00;
+  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #ff421300;
+  /*-webkit-backdrop-filter: blur(7px); */
+  border: 1px solid rgba(255, 255, 255, 0.259);
+}
+.lselect {
+  margin-bottom: 10px;
+  color: rgb(240, 255, 255);
+  padding: 10px;
+  background-color: #ffffff0c;
+  border: 1px solid #dddddd00;
+  border-radius: 5px;
+  border-radius: 10px;
+  background-color: #ff421300;
+  /*-webkit-backdrop-filter: blur(7px); */
+  border: 1px solid rgba(255, 255, 255, 0.259);
+}
+
+.ltextarea {
+  height: 100px;
+  color: rgb(255, 255, 255);
+}
+
+.lbutton {
+  padding: 10px;
+  background: linear-gradient(to left, #ff4213, #ff9544);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lbutton:hover {
+  background-color: #ffffff;
+}
+
+option {
+  background-color: #d15b00;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(7px);
+  border: px solid rgba(255, 255, 255, 0.132);
+}

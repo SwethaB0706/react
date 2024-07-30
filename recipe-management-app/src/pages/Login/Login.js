@@ -1,11 +1,10 @@
-
-import React, { useState, useEffect } from 'react';
-import { useMutation, gql } from '@apollo/client';
-import { Link, useNavigate } from 'react-router-dom';
-import styles from '../Login/Login.module.css';
-import { client } from '../../index';
-import { AuthContext } from '../../contexts/AuthContext';
-import logo from "./Media (3).png"
+import React, { useState, useEffect } from "react";
+import { useMutation, gql } from "@apollo/client";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "../Login/Login.module.css";
+import { client } from "../../index";
+import { AuthContext } from "../../contexts/AuthContext";
+import logo from "./Media (3).png";
 
 const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
@@ -21,42 +20,42 @@ const LOGIN_MUTATION = gql`
 
 const Login = () => {
   const { dispatch } = React.useContext(AuthContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const [login, { loading }] = useMutation(LOGIN_MUTATION, {
     onCompleted: ({ login }) => {
-      localStorage.setItem('token', login.token);
+      localStorage.setItem("token", login.token);
       client.resetStore();
       dispatch({
-        type: 'LOGIN',
+        type: "LOGIN",
         payload: { token: login.token, user: login.user },
       });
-      navigate('/');
+      navigate("/");
     },
     onError: (error) => {
-      setErrorMessage(error.message || 'An error occurred during login');
+      setErrorMessage(error.message || "An error occurred during login");
     },
   });
 
   useEffect(() => {
-    setEmail('');
-    setPassword('');
+    setEmail("");
+    setPassword("");
   }, []);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
-      navigate('/');
+      navigate("/");
     }
   }, [navigate]);
 
   useEffect(() => {
     // Add class to body
     document.body.classList.add(styles.loginBody);
-    
+
     // Cleanup function to remove the class
     return () => {
       document.body.classList.remove(styles.loginBody);
@@ -65,7 +64,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrorMessage('');
+    setErrorMessage("");
     login({ variables: { email, password } });
   };
 
@@ -75,7 +74,7 @@ const Login = () => {
         <img src={logo} alt="Logo" />
       </div>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h2 className={styles.gradientText}>Login-form</h2>
+        <h2 className={styles.lgradientText}>Login-form</h2>
         <div className={styles.inputField}>
           <input
             type="email"
@@ -94,17 +93,23 @@ const Login = () => {
           />
           <label>Enter password</label>
         </div>
-        <div className={styles.forget}>
-        </div>
-        <button type="submit" disabled={loading} className={styles.gradientButton}>
-          {loading ? 'Logging in...' : 'Log In'}
+        <div className={styles.forget}></div>
+        <button
+          type="submit"
+          disabled={loading}
+          className={styles.gradientButton}
+        >
+          {loading ? "Logging in..." : "Log In"}
         </button>
         {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
         <div className={styles.createAccount}>
           <p>
-            Don't have an account?{' '}
-            <Link className={`${styles.link} ${styles.gradientText}`} to="/register">
-             Register Now
+            Don't have an account?{" "}
+            <Link
+              className={`${styles.link} ${styles.gradientText}`}
+              to="/register"
+            >
+              Register Now
             </Link>
           </p>
         </div>
@@ -114,4 +119,3 @@ const Login = () => {
 };
 
 export default Login;
-

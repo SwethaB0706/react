@@ -1,18 +1,30 @@
 // api.js
-const API_KEY = 'NJBE7fEJftJyZ6vL8YhMYRQ9s2TCyuaYSGD7DMmoCo7ScpkjJkidDO92'; // Replace with your Pexels API Key
-const API_URL = 'https://api.pexels.com/v1/search';
+// api.js
+const API_KEY = "NJBE7fEJftJyZ6vL8YhMYRQ9s2TCyuaYSGD7DMmoCo7ScpkjJkidDO92";
+const API_URL = "https://api.pexels.com/v1/search";
 
-export const fetchImages = async (query) => {
+export const fetchImages = async (query, page = 1) => {
   try {
-    const response = await fetch(`${API_URL}?query=${encodeURIComponent(query)}&per_page=1`, {
-      headers: {
-        Authorization: API_KEY,
-      },
-    });
+    const response = await fetch(
+      `${API_URL}?query=${encodeURIComponent(query)}&per_page=1&page=${page}`,
+      {
+        headers: {
+          Authorization: API_KEY,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(
+        `HTTP error! status: ${response.status}, body: ${errorBody}`
+      );
+    }
+
     const data = await response.json();
-    return data.photos[0]?.src?.large || '';
+    return data.photos[0]?.src?.large || "";
   } catch (error) {
-    console.error('Error fetching images:', error);
-    return '';
+    console.error("Error fetching images:", error);
+    return "";
   }
 };

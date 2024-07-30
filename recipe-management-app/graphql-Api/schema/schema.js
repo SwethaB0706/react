@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -30,8 +30,21 @@ const typeDefs = gql`
   type Mutation {
     register(username: String!, email: String!, password: String!): AuthPayload!
     login(email: String!, password: String!): AuthPayload!
-    addRecipe(title: String!, ingredients: [String!]!, instructions: [String!]!, category: String!, date: String!): Recipe!
-    updateRecipe(id: ID!, title: String, ingredients: [String!], instructions: [String!], category: String, date: String): Recipe!
+    addRecipe(
+      title: String!
+      ingredients: [String!]!
+      instructions: [String!]!
+      category: String!
+      date: String!
+    ): Recipe!
+    updateRecipe(
+      id: ID!
+      title: String
+      ingredients: [String!]
+      instructions: [String!]
+      category: String
+      date: String
+    ): Recipe!
     deleteRecipe(id: ID!): Boolean!
   }
 `;

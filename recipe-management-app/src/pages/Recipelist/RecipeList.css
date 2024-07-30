@@ -1,4 +1,4 @@
-.recipe-list-container {
+/* .recipe-list-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -83,4 +83,170 @@
   .add-recipe-button:hover {
     background: linear-gradient(to right #e35937, #feb47b);
   }
-  
+   */
+/* RecipeList.css */
+.recipe-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to right, #ece9ee00, #f3eade00);
+  border-radius: 10px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.recipe-list-header {
+  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-card-content {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  border-radius: 5px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.163);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+
+.recipe-card p {
+  margin: 5px 0;
+}
+
+.view-link {
+  background: linear-gradient(90deg, #ffffff, #ffd9a0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.add-recipe-button {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background: linear-gradient(to left, #ff7e5f, #feb47b);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-recipe-button:hover {
+  background: linear-gradient(to right, #e35937, #feb47b);
+}
+
+.image-confirmation {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-confirmation img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.image-confirmation button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: #ff7d58;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-confirmation button:hover {
+  background-color: #ff9900;
+}
+
+/* RecipeList.css */
+/* ... (keep all the previous styles) ... */
+
+.image-confirmation {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-confirmation img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.image-confirmation button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #ff7d58;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-confirmation button:hover {
+  background-color: #ff9900;
+}
+
+.recipe-card {
+  background-color: #333; /* Dark background for cards without images */
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -53,7 +53,7 @@
 
 //   return (
 //     <header className="header-container">
-      
+
 //       <nav className="nav">
 //         {isLoggedIn && (
 //           <div className="nav-links">
@@ -79,23 +79,23 @@
 // };
 
 // export default Header;
-import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import './Header.css';
-import logo from '../pages/Login/Media (3).png'; // Update this path to your actual logo
+import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import "./Header.css";
+import logo from "../pages/Login/Media (3).png"; // Update this path to your actual logo
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isLoggedIn = !!localStorage.getItem('token');
+  const isLoggedIn = !!localStorage.getItem("token");
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   // Do not render header on login page
-  if (location.pathname === '/login' || location.pathname === '/register') {
+  if (location.pathname === "/login" || location.pathname === "/register") {
     return null;
   }
 
@@ -107,14 +107,22 @@ const Header = () => {
         </div>
         {isLoggedIn && (
           <div className="nav-links">
-            <Link className="nav-link" to="/">Dashboard</Link>
-            <Link className="nav-link" to="/recipes">Recipes</Link>
-            <Link className="nav-link" to="/add-recipe">Add Recipe</Link>
+            <Link className="nav-link" to="/">
+              Dashboard
+            </Link>
+            <Link className="nav-link" to="/recipes">
+              Recipes
+            </Link>
+            <Link className="nav-link" to="/add-recipe">
+              Add Recipe
+            </Link>
           </div>
         )}
         <div>
           {isLoggedIn ? (
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <button className="logout-button" onClick={handleLogout}>
+              Logout
+            </button>
           ) : (
             <>
               {/* <Link className="nav-link" to="/login">Login</Link>

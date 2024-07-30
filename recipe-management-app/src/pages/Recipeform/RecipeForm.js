@@ -353,7 +353,7 @@
 //       navigate('/recipes');
 //       window.location.reload();
 //     },
-   
+
 //   });
 
 //   const [updateRecipe] = useMutation(UPDATE_RECIPE, {
@@ -452,10 +452,10 @@
 
 // export default RecipeForm;
 
-import React, { useState, useEffect } from 'react';
-import { useMutation, useQuery, gql } from '@apollo/client';
-import { useParams, useNavigate } from 'react-router-dom';
-import './RecipeForm.css';
+import React, { useState, useEffect } from "react";
+import { useMutation, useQuery, gql } from "@apollo/client";
+import { useParams, useNavigate } from "react-router-dom";
+import "./RecipeForm.css";
 
 const GET_RECIPES = gql`
   query GetRecipes {
@@ -472,8 +472,20 @@ const GET_RECIPES = gql`
 `;
 
 const ADD_RECIPE = gql`
-  mutation AddRecipe($title: String!, $ingredients: [String!]!, $instructions: [String!]!, $category: String!, $date: String!) {
-    addRecipe(title: $title, ingredients: $ingredients, instructions: $instructions, category: $category, date: $date) {
+  mutation AddRecipe(
+    $title: String!
+    $ingredients: [String!]!
+    $instructions: [String!]!
+    $category: String!
+    $date: String!
+  ) {
+    addRecipe(
+      title: $title
+      ingredients: $ingredients
+      instructions: $instructions
+      category: $category
+      date: $date
+    ) {
       id
       title
       ingredients
@@ -486,8 +498,22 @@ const ADD_RECIPE = gql`
 `;
 
 const UPDATE_RECIPE = gql`
-  mutation UpdateRecipe($id: ID!, $title: String!, $ingredients: [String!]!, $instructions: [String!]!, $category: String!, $date: String!) {
-    updateRecipe(id: $id, title: $title, ingredients: $ingredients, instructions: $instructions, category: $category, date: $date) {
+  mutation UpdateRecipe(
+    $id: ID!
+    $title: String!
+    $ingredients: [String!]!
+    $instructions: [String!]!
+    $category: String!
+    $date: String!
+  ) {
+    updateRecipe(
+      id: $id
+      title: $title
+      ingredients: $ingredients
+      instructions: $instructions
+      category: $category
+      date: $date
+    ) {
       id
       title
       ingredients
@@ -515,14 +541,18 @@ const GET_RECIPE = gql`
 const RecipeForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [title, setTitle] = useState('');
-  const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
-  const [category, setCategory] = useState('');
-  const [date, setDate] = useState('');
+  const [title, setTitle] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [instructions, setInstructions] = useState("");
+  const [category, setCategory] = useState("");
+  const [date, setDate] = useState("");
 
-  const { loading: queryLoading, error: queryError, data } = useQuery(GET_RECIPE, {
-    fetchPolicy: 'network-only',
+  const {
+    loading: queryLoading,
+    error: queryError,
+    data,
+  } = useQuery(GET_RECIPE, {
+    fetchPolicy: "network-only",
     variables: { id },
     skip: !id,
   });
@@ -543,7 +573,7 @@ const RecipeForm = () => {
       }
     },
     onCompleted: () => {
-      navigate('/recipes');
+      navigate("/recipes");
       window.location.reload();
     },
   });
@@ -552,7 +582,7 @@ const RecipeForm = () => {
     update(cache, { data: { updateRecipe } }) {
       const existingRecipes = cache.readQuery({ query: GET_RECIPES });
       if (existingRecipes) {
-        const newRecipes = existingRecipes.getRecipes.map(recipe =>
+        const newRecipes = existingRecipes.getRecipes.map((recipe) =>
           recipe.id === updateRecipe.id ? updateRecipe : recipe
         );
         cache.writeQuery({
@@ -561,15 +591,16 @@ const RecipeForm = () => {
         });
       }
     },
-    onCompleted: () => navigate('/recipes'),
+    onCompleted: () => navigate("/recipes"),
   });
 
   useEffect(() => {
     if (data && data.getRecipe) {
-      const { title, ingredients, instructions, category, date } = data.getRecipe;
+      const { title, ingredients, instructions, category, date } =
+        data.getRecipe;
       setTitle(title);
-      setIngredients(ingredients.join('\n'));
-      setInstructions(instructions.join('\n'));
+      setIngredients(ingredients.join("\n"));
+      setInstructions(instructions.join("\n"));
       setCategory(category);
       setDate(date);
     }
@@ -579,8 +610,8 @@ const RecipeForm = () => {
     e.preventDefault();
     const recipeData = {
       title,
-      ingredients: ingredients.split('\n'),
-      instructions: instructions.split('\n'),
+      ingredients: ingredients.split("\n"),
+      instructions: instructions.split("\n"),
       category,
       date,
     };
@@ -597,7 +628,7 @@ const RecipeForm = () => {
 
   return (
     <div className="lform-container">
-      <h2>{id ? 'Edit Recipe' : 'Add New Recipe'}</h2>
+      <h2>{id ? "Edit Recipe" : "Add New Recipe"}</h2>
       <form className="lform" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -641,11 +672,12 @@ const RecipeForm = () => {
           onChange={(e) => setDate(e.target.value)}
           required
         />
-        <button type="submit" className="lbutton">{id ? 'Update Recipe' : 'Add Recipe'}</button>
+        <button type="submit" className="lbutton">
+          {id ? "Update Recipe" : "Add Recipe"}
+        </button>
       </form>
     </div>
   );
 };
 
 export default RecipeForm;
-
