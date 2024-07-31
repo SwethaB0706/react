@@ -53,10 +53,8 @@ const Login = () => {
   }, [navigate]);
 
   useEffect(() => {
-    // Add class to body
     document.body.classList.add(styles.loginBody);
 
-    // Cleanup function to remove the class
     return () => {
       document.body.classList.remove(styles.loginBody);
     };

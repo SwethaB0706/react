@@ -65,19 +65,6 @@
     "userId": "3"
   },
   {
-    "id": "d026d954-8095-4ae7-9bc6-871540c6a068",
-    "title": "kfc",
-    "ingredients": [
-      "asd"
-    ],
-    "instructions": [
-      "asd"
-    ],
-    "category": "Snacks",
-    "date": "2024-07-31",
-    "userId": "3"
-  },
-  {
     "id": "091675a4-92b2-4e72-99a2-c0ee441fbfe9",
     "title": "Cake",
     "ingredients": [
@@ -153,6 +140,19 @@
     ],
     "category": "Snacks",
     "date": "2002-12-12",
+    "userId": "3"
+  },
+  {
+    "id": "9138b0a4-6eb6-4494-b66b-ef3c39ac0cfe",
+    "title": "duck roast",
+    "ingredients": [
+      "asdsdf"
+    ],
+    "instructions": [
+      "sad"
+    ],
+    "category": "Dinner",
+    "date": "2024-08-11",
     "userId": "3"
   }
 ]

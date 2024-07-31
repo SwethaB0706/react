@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { fetchImages } from "./api";
 import "./RecipeList.css";
 
-// Helper functions for localStorage
 const saveToLocalStorage = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
