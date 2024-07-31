@@ -461,7 +461,7 @@ body {
   padding: 10px 15px;
   margin-right: 10px;
   border: 1px solid #f9572a;
-  border-radius: 25px;
+  border-radius: 5px;
   font-size: 1rem;
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.1);
@@ -474,7 +474,7 @@ body {
 }
 
 .dchatButton {
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
 .dchatResponse {
@@ -483,13 +483,13 @@ body {
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 
-.drandomRecipe {
+/* .drandomRecipe {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
@@ -497,7 +497,7 @@ body {
   margin-top: 20px;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
-}
+} */
 
 .drandomRecipe h3 {
   color: #f9572a;
@@ -507,4 +507,29 @@ body {
 .drandomRecipe p {
   color: #fff;
   line-height: 1.6;
+}
+
+.responseSection {
+  margin-bottom: 20px;
+}
+
+.responseTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.responseList {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.responseItem {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.responseItem::before {
+  content: "•";
+  position: absolute;
+  left: -15px;
 }

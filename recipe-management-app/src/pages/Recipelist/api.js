@@ -1,5 +1,3 @@
-// api.js
-// api.js
 const API_KEY = "NJBE7fEJftJyZ6vL8YhMYRQ9s2TCyuaYSGD7DMmoCo7ScpkjJkidDO92";
 const API_URL = "https://api.pexels.com/v1/search";
 

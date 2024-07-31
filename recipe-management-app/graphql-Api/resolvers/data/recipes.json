@@ -141,5 +141,18 @@
     "category": "Snacks",
     "date": "2024-07-31",
     "userId": "3"
+  },
+  {
+    "id": "b86d76ea-d574-4290-acf7-6aa68d7c6a8a",
+    "title": "RED VELVET CAKE",
+    "ingredients": [
+      "DFLVD"
+    ],
+    "instructions": [
+      "ESFLIJHVN"
+    ],
+    "category": "Snacks",
+    "date": "2002-12-12",
+    "userId": "3"
   }
 ]
