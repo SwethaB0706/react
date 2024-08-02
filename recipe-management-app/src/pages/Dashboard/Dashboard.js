@@ -15,7 +15,7 @@ const GET_RECIPES = gql`
   }
 `;
 
-const genAI = new GoogleGenerativeAI("AIzaSyBpCA_ii8eJH2lpgJLCJhkmTuvQ4Xz6aFw");
+const genAI = new GoogleGenerativeAI("api");
 
 const Dashboard = () => {
   const { loading, error, data } = useQuery(GET_RECIPES, {
