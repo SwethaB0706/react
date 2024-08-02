@@ -6,6 +6,7 @@ import { client } from "../../index";
 import { AuthContext } from "../../contexts/AuthContext";
 import logo from "./Media (3).png";
 
+// GraphQL mutation for logging in
 const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
     login(email: $email, password: $password) {

@@ -12,7 +12,7 @@
 }
 
 .recipe-list-header {
-  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  background: linear-gradient(90deg, #ff3903, #ff9b05);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -25,10 +25,14 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: .5px solid #ddd;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.8);
-  color: black;
+  background: hsla(0, 0%, 100%, 0.24);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 255);
 }
 
 .recipe-grid {
@@ -83,7 +87,7 @@
   width: 200px;
   margin: 20px auto;
   padding: 10px;
-  background: linear-gradient(to left, #ff7e5f, #feb47b);
+  background: linear-gradient(to left, #ff552a, #fd882f);
   color: white;
   text-align: center;
   text-decoration: none;
@@ -92,7 +96,7 @@
 }
 
 .add-recipe-button:hover {
-  background: linear-gradient(to right, #e35937, #feb47b);
+  background: linear-gradient(to right, #ff552a, #fd882f);
 }
 
 .image-confirmation {

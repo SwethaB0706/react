@@ -3,10 +3,10 @@
     "id": "42ad5844-34a7-4850-b8d7-6bbcbd8411a6",
     "title": "parotta",
     "ingredients": [
-      "hgh"
+      "salt"
     ],
     "instructions": [
-      "dgd"
+      "m"
     ],
     "category": "Lunch",
     "date": "2024-07-18",
@@ -143,16 +143,29 @@
     "userId": "3"
   },
   {
-    "id": "9138b0a4-6eb6-4494-b66b-ef3c39ac0cfe",
-    "title": "duck roast",
+    "id": "e4b5eaf9-611d-4aeb-b8b0-7455599ee5a4",
+    "title": "egg fry",
     "ingredients": [
-      "asdsdf"
+      "fhgh"
     ],
     "instructions": [
-      "sad"
+      "hhj"
+    ],
+    "category": "Snacks",
+    "date": "2024-08-19",
+    "userId": "2"
+  },
+  {
+    "id": "85d1ab34-6c1a-4963-b2d5-a6c9ad12e21b",
+    "title": "Butter chicken",
+    "ingredients": [
+      "butter"
+    ],
+    "instructions": [
+      "fry"
     ],
     "category": "Dinner",
-    "date": "2024-08-11",
+    "date": "2024-08-15",
     "userId": "3"
   }
 ]

@@ -8,7 +8,7 @@ jest.mock('./Dashboard', () => {
   return function DashboardMock() {
     return (
       <div>
-        <h1>Dashboard</h1>
+        <h1>Home</h1>
         <a href="/recipes">View All Recipes</a>
         <h2>Categories</h2>
         <button>All Recipes</button>
@@ -34,7 +34,7 @@ const renderDashboard = () => {
 describe('Dashboard', () => {
   test('renders dashboard header', () => {
     renderDashboard();
-    expect(screen.getByText('Dashboard')).toBeInTheDocument();
+    expect(screen.getByText('Home')).toBeInTheDocument();
   });
  
   test('renders View All Recipes link', () => {

@@ -65,7 +65,7 @@ body {
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   margin: 0;
-  background: linear-gradient(90deg, #ff7d58, #ff9900);
+  background: linear-gradient(90deg, #ff5628, #ff9900);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -121,7 +121,7 @@ body {
 }
 
 .dsection h2 {
-  background: linear-gradient(90deg, #ff7d58, #ff9900);
+  background: linear-gradient(90deg, #fb6339, #ff9900);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

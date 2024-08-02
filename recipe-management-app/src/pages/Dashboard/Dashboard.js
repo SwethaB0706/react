@@ -24,7 +24,6 @@ const Dashboard = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");
-  const [randomRecipe, setRandomRecipe] = useState("");
   const [images, setImages] = useState({});
 
   useEffect(() => {
@@ -114,7 +113,7 @@ const Dashboard = () => {
     <div className={styles.ddashboardContainer}>
       <header className={styles.dheader}>
         <div className={styles.dhero}>
-          <h1 className={styles.ddashboardHeader}>Dashboard</h1>
+          <h1 className={styles.ddashboardHeader}>HOME</h1>
           <p>Total Recipes: {recipes.length}</p>
         </div>
         <div className={styles.dcta}>
@@ -170,14 +169,14 @@ const Dashboard = () => {
         </section>
 
         <section className={styles.dsection}>
-          <h2>Ask Gemini About Dishes</h2>
+          <h2>Salt AI</h2>
           <div className={styles.dchatContainer}>
             <input
               type="text"
               value={query}
               onChange={handleQueryChange}
               className={styles.dchatInput}
-              placeholder="Ask about a dish..."
+              placeholder="What do you want to make today?"
             />
             <button onClick={handleAskGemini} className={styles.dchatButton}>
               Ask Gemini
@@ -187,15 +186,6 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
-
-        {randomRecipe && (
-          <section className={styles.dsection}>
-            <h2>Random Recipe</h2>
-            <div className={styles.randomRecipe}>
-              <p>{randomRecipe}</p>
-            </div>
-          </section>
-        )}
       </main>
     </div>
   );

@@ -15,6 +15,7 @@ import Header from "./components/Header";
 import GlobalStyles from "./styles/GlobalStyles";
 import { AuthProvider } from "./contexts/AuthContext";
 
+// Checks if a user is authenticated
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
 
@@ -23,6 +24,7 @@ const ProtectedRoute = ({ children }) => {
   return isTokenValid ? children : <Navigate to="/login" />;
 };
 
+// Check if the token has expired
 const isTokenExpired = (token) => {
   try {
     const [, payload] = token.split(".");
