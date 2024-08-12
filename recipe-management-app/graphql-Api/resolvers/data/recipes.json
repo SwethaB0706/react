@@ -156,16 +156,29 @@
     "userId": "2"
   },
   {
-    "id": "85d1ab34-6c1a-4963-b2d5-a6c9ad12e21b",
-    "title": "Butter chicken",
+    "id": "87ceb2b0-a4cf-4f09-9c27-dc9cf64b85ff",
+    "title": "cake",
     "ingredients": [
-      "butter"
+      "asd"
     ],
     "instructions": [
-      "fry"
+      "asf"
     ],
-    "category": "Dinner",
-    "date": "2024-08-15",
+    "category": "Lunch",
+    "date": "2024-08-21",
+    "userId": "3"
+  },
+  {
+    "id": "45355755-f16b-4642-a633-384874ebcdfb",
+    "title": "choclate cake",
+    "ingredients": [
+      "sfg"
+    ],
+    "instructions": [
+      "dfh"
+    ],
+    "category": "Lunch",
+    "date": "2024-08-16",
     "userId": "3"
   }
 ]

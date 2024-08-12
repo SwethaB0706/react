@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { fetchImages } from "../Recipelist/api";
 import styles from "./Dashboard.module.css";
+import { useSpring, animated, to } from '@react-spring/web';
+import { useGesture } from '@use-gesture/react';
 
 const GET_RECIPES = gql`
   query GetRecipes {
@@ -16,6 +18,9 @@ const GET_RECIPES = gql`
 `;
 
 const genAI = new GoogleGenerativeAI("AIzaSyBpCA_ii8eJH2lpgJLCJhkmTuvQ4Xz6aFw");
+
+const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 20;
+const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 20;
 
 const Dashboard = () => {
   const { loading, error, data } = useQuery(GET_RECIPES, {
@@ -46,6 +51,17 @@ const Dashboard = () => {
 
     fetchImagesForRecipes();
   }, [data]);
+
+  useEffect(() => {
+    const preventDefault = (e) => e.preventDefault();
+    document.addEventListener('gesturestart', preventDefault);
+    document.addEventListener('gesturechange', preventDefault);
+
+    return () => {
+      document.removeEventListener('gesturestart', preventDefault);
+      document.removeEventListener('gesturechange', preventDefault);
+    };
+  }, []);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -83,6 +99,7 @@ const Dashboard = () => {
   const handleQueryChange = (e) => {
     setQuery(e.target.value);
   };
+
   const formatResponse = (text) => {
     const sections = text.split("\n\n");
     return sections.map((section, index) => {
@@ -103,6 +120,59 @@ const Dashboard = () => {
         </div>
       );
     });
+  };
+
+  const AnimatedRecipeCard = ({ recipe }) => {
+    const domTarget = useRef(null);
+    const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(() => ({
+      rotateX: 10,
+      rotateY: 20,
+      rotateZ: 0,
+      scale: 1,
+      zoom: 0,
+      x: 0,
+      y: 0,
+      config: { mass: 5, tension: 250, friction: 30 },
+    }));
+
+    useGesture(
+      {
+        onDrag: ({ active, offset: [x, y] }) =>
+          api({ x, y, rotateX: 0, rotateY: 0, scale: active ? 1 : 1.1 }),
+        onPinch: ({ offset: [d, a] }) => api({ zoom: d / 200, rotateZ: a }),
+        onMove: ({ xy: [px, py], dragging }) =>
+          !dragging &&
+          api({
+            rotateX: calcX(py, y.get()),
+            rotateY: calcY(px, x.get()),
+            scale: 1.1,
+          }),
+        onHover: ({ hovering }) =>
+          !hovering && api({ rotateX: 10, rotateY: 20, scale: 1 }),
+      },
+      { target: domTarget, eventOptions: { passive: false } }
+    )
+
+    return (
+      <animated.div
+        ref={domTarget}
+        className={styles.drecipeItem}
+        style={{
+          backgroundImage: `url(${images[recipe.id]})`,
+          transform: 'perspective(600px)',
+          x,
+          y,
+          scale: to([scale, zoom], (s, z) => s + z),
+          rotateX,
+          rotateY,
+          rotateZ,
+        }}
+      >
+        <Link to={`/recipe/${recipe.id}`}>
+          {recipe.title} - {recipe.category}
+        </Link>
+      </animated.div>
+    );
   };
 
   const filteredRecipes = selectedCategory
@@ -155,15 +225,7 @@ const Dashboard = () => {
           </h2>
           <div className={styles.drecipeSlider}>
             {filteredRecipes.slice(0, 5).map((recipe) => (
-              <div
-                key={recipe.id}
-                className={styles.drecipeItem}
-                style={{ backgroundImage: `url(${images[recipe.id]})` }}
-              >
-                <Link to={`/recipe/${recipe.id}`}>
-                  {recipe.title} - {recipe.category}
-                </Link>
-              </div>
+              <AnimatedRecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
         </section>

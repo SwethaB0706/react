@@ -21,7 +21,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
   const [register, { loading, error }] = useMutation(REGISTER_MUTATION, {
     onCompleted: ({ register }) => {
       localStorage.setItem("token", register.token);
@@ -30,10 +30,8 @@ const Register = () => {
   });
 
   useEffect(() => {
-    // Add class to body
     document.body.classList.add(styles.registerBody);
 
-    // Cleanup function to remove the class
     return () => {
       document.body.classList.remove(styles.registerBody);
     };
@@ -42,6 +40,17 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     register({ variables: { username, email, password } });
+  };
+
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
+  };
+  
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    setIsPasswordValid(validatePassword(newPassword));
   };
 
   return (
@@ -73,14 +82,21 @@ const Register = () => {
         </div>
         <div className={styles.inputField}>
           <input
-            type="password"
+            type=""
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handlePasswordChange}
+            className={isPasswordValid ? "" : styles.invalid}
             required
           />
           <label>Password</label>
         </div>
+        {!isPasswordValid && (<p className={styles.error} style={{color:"white"}}>
+        Password must be at least 8 characters long and include at least one
+        uppercase letter, one lowercase letter, one digit, and one special
+        character.
+      </p>
+    )}
         <button type="submit" disabled={loading}>
           {loading ? "Registering..." : "Register"}
         </button>

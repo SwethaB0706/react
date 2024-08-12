@@ -163,7 +163,7 @@ body {
   background: linear-gradient(90deg, #ff9b05, #f9572a);
 }
 
-.drecipeItem {
+/* .drecipeItem {
   width: 250px;
   height: 200px;
   color: #ffffff;
@@ -182,21 +182,50 @@ body {
   background-position: center;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-}
+} */
 
-.drecipeItem:hover {
+/* .drecipeItem:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   background: rgba(255, 155, 5, 0.3);
   background-size: -555px;
   background-position: center;
-}
+} */
 
-.drecipeItem a {
+/* .drecipeItem a {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
+} */
+
+.drecipeItem {
+  width: 200px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.drecipeItem:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.drecipeItem a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .dviewAllLink {

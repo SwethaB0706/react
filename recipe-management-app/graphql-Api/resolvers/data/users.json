@@ -34,5 +34,17 @@
     "username": "Anek C B",
     "email": "anekcbabu@gmail.com",
     "password": "$2a$10$U0MlpgPfsixo4XLTRBFH6Oh.Z/DVqAFgak0EIWjXtq141PwDTtNdC"
+  },
+  {
+    "id": "7b7b343e-ad91-466f-ae66-7cda0ebe9edb",
+    "username": "nirai",
+    "email": "nirai@gmail.com",
+    "password": "$2a$10$ilPbHQ..nJKmI9GpmhWzue.mjT6Kjz6DmM/FAtjm/Zf5FQQN3SotC"
+  },
+  {
+    "id": "0f0c060b-d4c2-4ae7-a130-a33f1a064a05",
+    "username": "a",
+    "email": "a@aa",
+    "password": "$2a$10$VZDWSpBZYS2ZD1OQ.OXpdu5cCTpGb7wORY4PglYC1uGIcnvwDrwCO"
   }
 ]
