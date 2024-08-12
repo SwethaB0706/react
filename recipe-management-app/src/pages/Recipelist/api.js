@@ -1,4 +1,4 @@
-
+const API_KEY =''
 const API_URL = "https://api.pexels.com/v1/search";
 
 export const fetchImages = async (query, page = 1) => {

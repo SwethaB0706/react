@@ -1,0 +1,101 @@
+/* .loginPage {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Allows for absolute positioning of children */
+/* } */
+
+.overlay {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* Allows for absolute positioning of the image within it */
+}
+
+.leftSection {
+  position: absolute; /* Position image absolutely within .overlay */
+  bottom: 0; /* Align to bottom of .overlay */
+  left: 0; /* Align to left of .overlay */
+  width: 50%; /* Adjust based on your layout */
+  height: 50%; /* Adjust based on your layout */
+  background: url('D:\\Data\\Official\\fullstack\\final\\react\\recipe-management-app\\src\\styles\\Brown and Red Modern Fall Food Recipe Pinterest Pin_20240725_145344_0000.png') no-repeat;
+  background-size: cover; /* Ensures the image covers the section */
+}
+
+.rightSection {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-left: 50%; /* Pushes the content to the right to touch the image */
+}
+
+.loginContainer {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.button {
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: #f44336;
+  margin-top: 10px;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.link {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
