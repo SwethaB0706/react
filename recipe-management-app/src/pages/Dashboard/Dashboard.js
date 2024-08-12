@@ -17,7 +17,7 @@ const GET_RECIPES = gql`
   }
 `;
 
-const genAI = new GoogleGenerativeAI("AIzaSyBpCA_ii8eJH2lpgJLCJhkmTuvQ4Xz6aFw");
+const genAI = new GoogleGenerativeAI("api");
 
 const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 20;
 const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 20;
